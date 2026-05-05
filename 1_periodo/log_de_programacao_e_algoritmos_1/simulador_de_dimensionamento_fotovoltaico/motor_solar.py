@@ -7,11 +7,15 @@ def calc_kwp(consumo_diario, hsp):
     if (hsp == 0):
         print('ERRO: Você colocou o valor zero no HSP, tente novamente com um valor maior.')
         return None
-    else:
-        return consumo_diario / (hsp * 0.8)
+
+    return consumo_diario / (hsp * 0.8)
 
 # Função que calcula os painéis
 def calc_paineis(kwp_total, potencia_painel):
+    if (potencia_painel == 0):
+        print('ERRO: Você colocou o valor zero na potência do painel, tente novamente com um valor maior.')
+        return None
+    
     resultado = kwp_total / potencia_painel
 
     # Aqui ele pega o resultado que mostrará a quantidade de painéis
