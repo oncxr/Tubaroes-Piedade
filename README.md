@@ -25,11 +25,18 @@ Tubaroes-Piedade
 
 Depois de abrir o projeto, é necessário atualizar seu repositório local com o repositório remoto, digite esses 4 comandos em sequência:
 ```sh
-git remote add upstream https://github.com/Vit0ncio/Tubaroes-Piedade
+git remote add upstream https://github.com/Vit0ncio/Tubaroes-Piedade 
 git checkout main
 git pull upstream main
 git push origin main
 ```
+
+Caso você já tenha o repositório pronto e configurado no seu computador, mas deseja sincronizar com o repositório do github, use esses comandos:
+```sh
+git pull upstream main
+git push origin main
+```
+**(OBS: É necessário que você faça isso toda vez que for mexer com o programa)**
 
 Quando você tiver alguma alteração para fazer em algum arquivo e deseja colocar no seu repositório, digite esses comandos:
 ```sh
