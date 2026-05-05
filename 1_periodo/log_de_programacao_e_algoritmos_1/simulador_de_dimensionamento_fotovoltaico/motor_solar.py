@@ -5,7 +5,6 @@ def calc_consumo_diario(consumo_mensal):
 # Função que calcula o kWp
 def calc_kwp(consumo_diario, hsp):
     if (hsp == 0):
-        print('ERRO: Você colocou o valor zero no HSP, tente novamente com um valor maior.')
         return None
 
     return consumo_diario / (hsp * 0.8)
@@ -13,7 +12,6 @@ def calc_kwp(consumo_diario, hsp):
 # Função que calcula os painéis
 def calc_paineis(kwp_total, potencia_painel):
     if (potencia_painel == 0):
-        print('ERRO: Você colocou o valor zero na potência do painel, tente novamente com um valor maior.')
         return None
     
     resultado = kwp_total / potencia_painel
