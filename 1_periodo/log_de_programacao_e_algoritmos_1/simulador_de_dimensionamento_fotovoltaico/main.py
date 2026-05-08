@@ -1,5 +1,5 @@
-from .crm import coletar_dados
-from .motor_solar import calc_consumo_diario, calc_kwp, calc_paineis
+from crm import coletar_dados
+from motor_solar import calc_consumo_diario, calc_kwp, calc_paineis
 
 
 def main():
