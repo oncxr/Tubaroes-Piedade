@@ -2,28 +2,43 @@
 def calc_consumo_diario(consumo_mensal):
     return consumo_mensal / 30
 
+
 # Função que calcula o kWp
 def calc_kwp(consumo_diario, hsp):
-    if (hsp == 0):
+    if hsp == 0:
         return None
 
     return consumo_diario / (hsp * 0.8)
 
+
 # Função que calcula os painéis
-def calc_paineis(kwp_total, potencia_painel):
-    if (potencia_painel == 0):
+def calc_paineis(kwp_total, potencia_painel_w):
+    if potencia_painel_w == 0:
         return None
-    
-    resultado = kwp_total / potencia_painel
+
+    potencia_painel_w = potencia_painel_w / 1000
+    resultado = kwp_total / potencia_painel_w
 
     # Aqui ele pega o resultado que mostrará a quantidade de painéis
     # Para não permitir números quebrados e se tiver, arredondar pra mais
     # O código converte o resultado para int (ex 4.3 vira 4) e compara os valores
     # Caso o resultado seja um número quebrado e seja maior que o número convertido para inteiro
     # Ele transforma o número e inteiro e acrescenta em 1
-    if (resultado > int(resultado)):
+    if resultado > int(resultado):
         quant_paineis = int(resultado) + 1
     else:
         quant_paineis = int(resultado)
 
     return quant_paineis
+
+
+def calc_custo_total(qtd_paineis, preco_painel, inversor, mao_obra):
+    return (qtd_paineis * preco_painel) + inversor + mao_obra
+
+
+def calc_economia(consumo_mensal, tarifa):
+    return consumo_mensal * tarifa
+
+
+def calc_payback(custo_total, economia_mensal):
+    return custo_total / economia_mensal
