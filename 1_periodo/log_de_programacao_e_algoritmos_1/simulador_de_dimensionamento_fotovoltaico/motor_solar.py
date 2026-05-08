@@ -1,10 +1,12 @@
+# motor_solar.py by Vitor (Vit0ncio)
+
 # Função que calcula o consumo diário
 def calc_consumo_diario(consumo_mensal):
     return consumo_mensal / 30
 
 
 # Função que calcula o kWp
-def calc_kwp(consumo_diario, hsp):
+def pot_pico_kwp(consumo_diario, hsp):
     if hsp == 0:
         return None
 
@@ -25,20 +27,23 @@ def calc_paineis(kwp_total, potencia_painel_w):
     # Caso o resultado seja um número quebrado e seja maior que o número convertido para inteiro
     # Ele transforma o número e inteiro e acrescenta em 1
     if resultado > int(resultado):
-        quant_paineis = int(resultado) + 1
+        qtd_paineis = int(resultado) + 1
     else:
-        quant_paineis = int(resultado)
+        qtd_paineis = int(resultado)
 
-    return quant_paineis
+    return qtd_paineis
 
 
+# Função que calcula o custo total
 def calc_custo_total(qtd_paineis, preco_painel, inversor, mao_obra):
     return (qtd_paineis * preco_painel) + inversor + mao_obra
 
 
+# Função que calcula a economia
 def calc_economia(consumo_mensal, tarifa):
     return consumo_mensal * tarifa
 
 
+# Função que calcula o payback
 def calc_payback(custo_total, economia_mensal):
     return custo_total / economia_mensal
